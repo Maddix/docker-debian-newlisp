@@ -7,4 +7,6 @@ RUN mkdir /home/git
 RUN git clone https://github.com/kosh04/newlisp.git /home/git/newlisp
 RUN cd /home/git/newlisp/ && make
 RUN cp /home/git/newlisp/newlisp /usr/bin/newlisp
-CMD newlisp $1
+RUN mkdir /workspace
+WORKDIR /workspace
+ENTRYPOINT ["newlisp"]
